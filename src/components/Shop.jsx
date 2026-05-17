@@ -2,7 +2,10 @@ import { useState } from 'react';
 import useFetch from '../hooks/useFetch.js';
 
 function Shop() {
-  const { data: products } = useFetch('https://coffee-api-qm89.onrender.com/coffee');
+  const { data: products, loading } = useFetch(
+    'https://coffee-api-qm89.onrender.com/coffee'
+  );
+
   const origins = products
     ? [...new Set(products.map(p => p.origin))].sort()
     : [];
@@ -18,9 +21,17 @@ function Shop() {
     return matchesSearch && matchesOrigin;
   });
 
+  if (loading) {
+    return (
+      <div style={{ textAlign: 'center', padding: '4rem', color: '#fff' }}>
+        Loading coffee...
+      </div>
+    );
+  }
+
   return (
     <>
-      <div style={{ display: 'flex', minHeight: '90vh' ,backgroundColor: '#2E1F1A'}}>
+      <div style={{ display: 'flex', minHeight: '90vh', backgroundColor: '#2E1F1A' }}>
         
         <aside style={{ width: '250px', padding: '2rem', backgroundColor: '#f3f4f6' }}>
           <h3>Search</h3>
@@ -47,7 +58,7 @@ function Shop() {
           </select>
         </aside>
 
-        <main style={{ flex: 1, padding: '2rem' ,textAlign: 'left', color: '#ffffff'}}>
+        <main style={{ flex: 1, padding: '2rem', textAlign: 'left', color: '#ffffff' }}>
           <h2>Our Coffee Collection</h2>
 
           <div
