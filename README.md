@@ -1,16 +1,42 @@
-# React + Vite
+# Coffee Admin Portal ☕
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+- View coffee products
+- Add new products
+- Edit existing products
+- Delete products
+- Search and filter by origin
+- Fully tested with Vitest
 
-Currently, two official plugins are available:
+## Tech Stack
+- React (Vite)
+- JSON Server API (deployed)
+- Vitest + Testing Library
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## API
+Base URL:
+https://coffee-api-qm89.onrender.com
 
-## React Compiler
+Endpoints:
+- GET /coffee
+- POST /coffee
+- PATCH /coffee/:id
+- DELETE /coffee/:id
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Setup Instructions
 
-## Expanding the ESLint configuration
+```bash
+git clone https://github.com/Amos-44/coffee-admin-portal.git
+cd coffee-admin-portal
+npm install
+npm run dev
+```
+## Running Test
+npm run test
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Screenshots
+<img width="1846" height="947" alt="image" src="https://github.com/user-attachments/assets/4cf005fc-3a78-40ad-bf24-b17cd41f9985" />
+<img width="1846" height="947" alt="image" src="https://github.com/user-attachments/assets/d3f761f5-65f6-41c8-a5f3-0fc477777c9a" />
+<img width="1846" height="947" alt="image" src="https://github.com/user-attachments/assets/7d5f9b15-b4a1-4728-8d91-4bc8f249d007" />
+
+
