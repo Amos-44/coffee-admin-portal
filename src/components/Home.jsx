@@ -1,8 +1,19 @@
 import useFetch from '../hooks/useFetch.js';
 
 function Home() {
-  const { data } = useFetch('https://coffee-api-qm89.onrender.com/store_info');
+  const { data, loading } = useFetch(
+    'https://coffee-api-qm89.onrender.com/store_info'
+  );
+
   const store = data?.[0];
+
+  if (loading) {
+    return (
+      <div style={{ textAlign: 'center', padding: '4rem' }}>
+        Loading...
+      </div>
+    );
+  }
 
   return (
     <div
@@ -44,7 +55,7 @@ function Home() {
       {/* CONTENT */}
       <div style={{ position: 'relative', zIndex: 2 }}>
         <h1 style={{ fontSize: '3rem' }}>{store?.name}</h1>
-        <p> {store?.description}</p>
+        <p>{store?.description}</p>
         <p>📞 {store?.phone_number}</p>
       </div>
     </div>
