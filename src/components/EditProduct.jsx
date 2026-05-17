@@ -8,7 +8,7 @@ function EditProduct() {
   const [formData, setFormData] = useState({ name: '', description: '', origin: '', price: '' });
 
   useEffect(() => {
-    fetch(`http://localhost:3001/coffee/${id}`)
+    fetch(`https://coffee-api-qm89.onrender.com/coffee/${id}`)
       .then(res => res.json())
       .then(product => setFormData({
         name: product.name,
@@ -20,7 +20,7 @@ function EditProduct() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch(`http://localhost:3001/coffee/${id}`, {
+    await fetch(`https://coffee-api-qm89.onrender.com/coffee/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...formData, price: Number(formData.price) })

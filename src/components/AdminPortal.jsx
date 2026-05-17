@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import useFetch from '../hooks/useFetch.js';
 
 function AdminPortal() {
-  const { data: products, refetch } = useFetch('http://localhost:3001/coffee');
+  const { data: products, refetch } = useFetch('https://coffee-api-qm89.onrender.com/coffee');
   const navigate = useNavigate();
 
   const nameId = useId();
@@ -38,7 +38,7 @@ function AdminPortal() {
       return;
     }
 
-    await fetch('http://localhost:3001/coffee', {
+    await fetch('https://coffee-api-qm89.onrender.com/coffee', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...formData, price: Number(formData.price) })
@@ -51,7 +51,7 @@ function AdminPortal() {
 
   const handleDelete = async (id) => {
     if (!window.confirm('Delete?')) return;
-    await fetch(`http://localhost:3001/coffee/${id}`, { method: 'DELETE' });
+    await fetch(`https://coffee-api-qm89.onrender.com/coffee/${id}`, { method: 'DELETE' });
     refetch();
   };
 

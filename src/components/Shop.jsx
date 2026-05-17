@@ -2,8 +2,7 @@ import { useState } from 'react';
 import useFetch from '../hooks/useFetch.js';
 
 function Shop() {
-  const { data: products } = useFetch('http://localhost:3001/coffee');
-
+  const { data: products } = useFetch('https://coffee-api-qm89.onrender.com/coffee');
   const origins = products
     ? [...new Set(products.map(p => p.origin))].sort()
     : [];

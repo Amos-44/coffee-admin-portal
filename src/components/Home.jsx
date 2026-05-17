@@ -1,7 +1,7 @@
 import useFetch from '../hooks/useFetch.js';
 
 function Home() {
-  const { data } = useFetch('http://localhost:3001/store_info');
+  const { data } = useFetch('https://coffee-api-qm89.onrender.com/store_info');
   const store = data?.[0];
 
   return (
